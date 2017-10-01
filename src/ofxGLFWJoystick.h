@@ -65,10 +65,10 @@ public:
 		string name;
 		int numButtons;
 		const unsigned char * buttonData;
-                std::vector<const unsigned char> prevButtonData;
+                std::vector<unsigned char> prevButtonData;
 		int numAxis;
 		const float * axisData;
-                std::vector<const float> prevAxisData;
+                std::vector<float> prevAxisData;
 
 		JoyData(){
 			buttonData = NULL; axisData = NULL;
@@ -94,12 +94,12 @@ public:
                   diff changes;
                   const int cmpAxes = min(static_cast<size_t>(numAxis), prevAxisData.size());
                   const int cmpButtons = min(static_cast<size_t>(numButtons), prevAxisData.size());
-                  for(int i=0; cmpAxes; i++) {
+                  for(int i=0; i<cmpAxes; i++) {
                     if(axisData[i] != prevAxisData[i]) {
                       changes.axes[i] = axisData[i];
                     }
                   }
-                  for(int i=0; cmpButtons; i++) {
+                  for(int i=0; i<cmpButtons; i++) {
                     if(axisData[i] != prevButtonData[i]) {
                       changes.buttons[i] = axisData[i];
                     }
