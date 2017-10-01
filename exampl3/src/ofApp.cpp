@@ -5,12 +5,22 @@
 void ofApp::setup(){
 	ofBackground(22);
 	ofxGLFWJoystick::one().printJoystickList();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
 	ofxGLFWJoystick::one().update();
+    
+    auto changes = ofxGLFWJoystick::one().getChangedValues(0);
+    
+    for(auto& kv : changes.buttons) {
+        ofLogNotice("exampl3") << "button " << kv.first << " = " << kv.second;
+    }
+    for(auto& kv : changes.axes) {
+        ofLogNotice("exampl3") << "axis " << kv.first << " = " << kv.second;
+    }
 }
 
 //--------------------------------------------------------------

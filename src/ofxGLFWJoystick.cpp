@@ -83,11 +83,9 @@ void ofxGLFWJoystick::update(){
 	for(int j = 0; j < numJoysticks; j++){
 		joyData[j].available = glfwJoystickPresent(j);
 		if(!joyData[j].available){
-			joyData[j].axisData = NULL;
-			joyData[j].buttonData = NULL;
-			joyData[j].numAxis = 0;
-			joyData[j].numButtons = 0;
+                    joyData[j].clear();
 		}else {
+                        joyData[j].shift();
 			joyData[j].axisData = glfwGetJoystickAxes(j, &joyData[j].numAxis);
 			joyData[j].buttonData = glfwGetJoystickButtons(j, &joyData[j].numButtons);
 		}
@@ -106,13 +104,7 @@ float ofxGLFWJoystick::getAxisValue(int axisID, int joyID){
 }
 
 const ofxGLFWJoystick::diff ofxGLFWJoystick::getChangedValues(int joyID) {
-  static ofxGLFWJoystick::diff changedValues;
-
-  if(isJoystickAvailable(joyID)) {
-    return joyData[joyID] % prevJoyData[joyID];
-  } 
-
-  return changedValues;
+  return joyData[joyID].changes();
 }
 
 unsigned char ofxGLFWJoystick::getButtonValue(int buttonID, int joyID){

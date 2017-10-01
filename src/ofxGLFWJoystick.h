@@ -58,18 +58,17 @@ public:
 	const unsigned char * getButtonsForJoystick(int joyID);
 	const float * getButtonsForAxis(int joyID);
 
-private:
-
-	ofxGLFWJoystick();
-	void lookForJoysticks();
+//private:
 
 	struct JoyData{
 		bool available;
 		string name;
 		int numButtons;
 		const unsigned char * buttonData;
+                std::vector<const unsigned char> prevButtonData;
 		int numAxis;
 		const float * axisData;
+                std::vector<const float> prevAxisData;
 
 		JoyData(){
 			buttonData = NULL; axisData = NULL;
@@ -77,18 +76,70 @@ private:
 			available = false;
 		}
 
-                diff operator%(const JoyData& other) {
-                  diff changes;
-                  // populate it...
+                void clear() {
+                  axisData = NULL;
+                  buttonData = NULL;
+                  numAxis = 0;
+                  numButtons = 0;
+                  prevAxisData.clear();
+                  prevButtonData.clear();
+                }
+                
+                void shift() {
+                  prevButtonData.assign(buttonData, buttonData + numButtons);
+                  prevAxisData.assign(axisData, axisData + numAxis);
+                }
 
-                  // return it...
+                diff changes() {
+                  diff changes;
+                  const int cmpAxes = min(static_cast<size_t>(numAxis), prevAxisData.size());
+                  const int cmpButtons = min(static_cast<size_t>(numButtons), prevAxisData.size());
+                  for(int i=0; cmpAxes; i++) {
+                    if(axisData[i] != prevAxisData[i]) {
+                      changes.axes[i] = axisData[i];
+                    }
+                  }
+                  for(int i=0; cmpButtons; i++) {
+                    if(axisData[i] != prevButtonData[i]) {
+                      changes.buttons[i] = axisData[i];
+                    }
+                  }
                   return changes;
                 }
+
+                /*
+                diff operator%(const JoyData& other) {
+                  diff changes;
+                  const int cmpAxes = min(numAxis, other.numAxis);
+                  const int cmpButtons = min(numButtons, other.numButtons);
+
+                  // this makes me uncomfortable
+                  for(int i=0; i<cmpAxes; i++) {
+                    if(axisData[i] != other.axisData[i]) {
+                      changes.axes[i] = axisData[i];
+                    }
+                  }
+                  for(int i=0; i<cmpButtons; i++) {
+                    if(buttonData[i] != other.buttonData[i]) {
+                      changes.buttons[i] = buttonData[i];
+                    }
+                  }
+
+                  ofLogNotice() << this->buttonData[0];
+                  return changes;
+                }
+                */
 	};
+
+private:
+
+	ofxGLFWJoystick();
+	void lookForJoysticks();
 
 	int numJoysticks;
 	JoyData joyData[GLFW_JOYSTICK_LAST];
         JoyData prevJoyData[GLFW_JOYSTICK_LAST];
+
     std::map<int, unsigned char> buttonValueQueue;
     std::map<int, float> axisValueQueue;
 };
