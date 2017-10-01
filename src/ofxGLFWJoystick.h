@@ -68,11 +68,16 @@ private:
 			numButtons = numAxis = 0;
 			available = false;
 		}
+        
+        // make a copy constructor for prev comparison bit
 
 	};
 
 	int numJoysticks;
 	JoyData joyData[GLFW_JOYSTICK_LAST];
+    JoyData prevJoyData[GLFW_JOYSTICK_LAST];
+    std::map<int, unsigned char> buttonValueQueue;
+    std::map<int, float> axisValueQueue;
 };
 
 #endif /* defined(__emptyExample__ofxGLFWJoystick__) */
