@@ -41,6 +41,13 @@ public:
 
 	void drawDebug(int x, int y);
 
+        struct diff {
+          std::map<int, unsigned char> buttons;
+          std::map<int, float> axes;
+        };
+
+        const diff getChangedValues(int joyID);
+
 	//safe access
 	float getAxisValue(int axisID, int joyID);
 	unsigned char getButtonValue(int axisID, int joyID);
@@ -63,19 +70,25 @@ private:
 		const unsigned char * buttonData;
 		int numAxis;
 		const float * axisData;
+
 		JoyData(){
 			buttonData = NULL; axisData = NULL;
 			numButtons = numAxis = 0;
 			available = false;
 		}
-        
-        // make a copy constructor for prev comparison bit
 
+                diff operator%(const JoyData& other) {
+                  diff changes;
+                  // populate it...
+
+                  // return it...
+                  return changes;
+                }
 	};
 
 	int numJoysticks;
 	JoyData joyData[GLFW_JOYSTICK_LAST];
-    JoyData prevJoyData[GLFW_JOYSTICK_LAST];
+        JoyData prevJoyData[GLFW_JOYSTICK_LAST];
     std::map<int, unsigned char> buttonValueQueue;
     std::map<int, float> axisValueQueue;
 };

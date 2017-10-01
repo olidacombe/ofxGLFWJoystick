@@ -77,6 +77,9 @@ void ofxGLFWJoystick::update(){
 	}
 
 	vector<string> joys;
+
+        std::swap(joyData, prevJoyData);
+
 	for(int j = 0; j < numJoysticks; j++){
 		joyData[j].available = glfwJoystickPresent(j);
 		if(!joyData[j].available){
@@ -102,6 +105,15 @@ float ofxGLFWJoystick::getAxisValue(int axisID, int joyID){
 	return 0.0f;
 }
 
+const ofxGLFWJoystick::diff ofxGLFWJoystick::getChangedValues(int joyID) {
+  static ofxGLFWJoystick::diff changedValues;
+
+  if(isJoystickAvailable(joyID)) {
+    return joyData[joyID] % prevJoyData[joyID];
+  } 
+
+  return changedValues;
+}
 
 unsigned char ofxGLFWJoystick::getButtonValue(int buttonID, int joyID){
 

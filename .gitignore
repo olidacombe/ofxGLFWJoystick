@@ -1,0 +1,12 @@
+*/obj/
+
+!*/bin/
+*/bin/*
+
+!*/bin/data
+
+**/*.xcodeproj/*
+!**/*.xcodeproj/project.pbxproj
+!**/*.xcodeproj/xcshareddata
+
+*.swp
