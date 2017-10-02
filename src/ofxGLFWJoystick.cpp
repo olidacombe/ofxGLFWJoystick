@@ -80,12 +80,12 @@ void ofxGLFWJoystick::update(){
 
         std::swap(joyData, prevJoyData);
 
-	for(int j = 0; j < numJoysticks; j++){
+	for(int j = 0; j < numJoysticks; j++) {
 		joyData[j].available = glfwJoystickPresent(j);
 		if(!joyData[j].available){
                     joyData[j].clear();
-		}else {
-                        joyData[j].shift();
+		} else {
+            joyData[j].shift();
 			joyData[j].axisData = glfwGetJoystickAxes(j, &joyData[j].numAxis);
 			joyData[j].buttonData = glfwGetJoystickButtons(j, &joyData[j].numButtons);
 		}

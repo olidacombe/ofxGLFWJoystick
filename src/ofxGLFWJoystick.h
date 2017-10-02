@@ -65,10 +65,10 @@ public:
 		string name;
 		int numButtons;
 		const unsigned char * buttonData;
-                std::vector<unsigned char> prevButtonData;
+        std::vector<unsigned char> prevButtonData;
 		int numAxis;
 		const float * axisData;
-                std::vector<float> prevAxisData;
+        std::vector<float> prevAxisData;
 
 		JoyData(){
 			buttonData = NULL; axisData = NULL;
@@ -100,8 +100,8 @@ public:
                     }
                   }
                   for(int i=0; i<cmpButtons; i++) {
-                    if(axisData[i] != prevButtonData[i]) {
-                      changes.buttons[i] = axisData[i];
+                    if(buttonData[i] != prevButtonData[i]) {
+                      changes.buttons[i] = buttonData[i];
                     }
                   }
                   return changes;
