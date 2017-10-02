@@ -4,6 +4,7 @@
 */bin/*
 
 !*/bin/data
+!*/bin/data/.gitignore
 
 **/*.xcodeproj/*
 !**/*.xcodeproj/project.pbxproj

@@ -9,24 +9,43 @@ void ofApp::setup(){
           ofLogError("ps2Midi") << "Unable to open virtual Midi port";
         }
 
+        gui.setup("params");
+        gui.add(showGui.set("showGui", false));
+        gui.add(debug.set("debug", false));
+        gui.add(midiCallbackTimeMillis.set("midiTime", 100, 20, 500));
+        gui.loadFromFile("settings.xml");
+
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
-    if(true) { // check if it's time yet
+    int time = ofGetElapsedTimeMillis();
+
+    if(time > midiCallbackTimeMillis) { // check if it's time yet
       ofxGLFWJoystick::one().update();
       auto changes = ofxGLFWJoystick::one().getChangedValues(0);
 
       sendMessages(changes);
+      ofResetElapsedTimeCounter();
     }
 
 }
 
 void ofApp::sendMessages(ofxGLFWJoystick::diff& changes, bool debug) {
+  const int baseCC = 0;
+
   if(debug) {
     for(auto& kv : changes.buttons) ofLogNotice("ps2Midi") << "button " << kv.first << " - " << static_cast<int>(kv.second);
     for(auto& kv : changes.axes) ofLogNotice("ps2Midi") << "axis " << kv.first << " - " << kv.second;
+  }
+
+  for(auto& kv : changes.buttons) {
+    midiOut.sendControlChange(midiChannel, baseCC + kv.first, kv.second);
+  }
+
+  for(auto& kv : changes.axes) {
+    midiOut.sendControlChange(midiChannel, baseCC + kv.first, ofMap(kv.second, 0., 1., 0, 127, true));
   }
 
 }
@@ -50,4 +69,23 @@ void ofApp::draw(){
 	ofSetColor(255);
 	ofCircle(mappedX, mappedY, 3);
 
+}
+
+void ofApp::keyPressed(int key){
+  switch(key) {
+    case 'h':
+      showGui = !showGui;
+      break;
+    case 'd':
+      debug = !debug;
+      break;
+    default:
+      break;
+  }
+}
+
+
+void ofApp::exit() {
+  midiOut.closePort();
+  gui.saveToFile("settings.xml");
 }

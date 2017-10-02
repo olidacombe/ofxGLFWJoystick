@@ -1,2 +1,3 @@
 ofxGLFWJoystick
+ofxGui
 ofxMidi

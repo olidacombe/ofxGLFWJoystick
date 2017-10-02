@@ -451,6 +451,359 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>3AA14969D9AE5F20768A8EB0</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxToggle.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxToggle.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>F5B3414F36BC1766201AA5E6</key>
+			<dict>
+				<key>fileRef</key>
+				<string>1B045BBA84B41B4E278C0DDB</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>1B045BBA84B41B4E278C0DDB</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxToggle.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxToggle.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>57DAF4C7884BC6CE19E50560</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSliderGroup.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxSliderGroup.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>297CFAED26A27D2AA7F58058</key>
+			<dict>
+				<key>fileRef</key>
+				<string>9784659C28DFD8ABA17676D0</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>9784659C28DFD8ABA17676D0</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSliderGroup.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxSliderGroup.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>F9FBB14BB236B5CBE40D4AA7</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSlider.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxSlider.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>D015DB6AFC6059CE501471A7</key>
+			<dict>
+				<key>fileRef</key>
+				<string>2D999C909598014FDCA9D0D8</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>2D999C909598014FDCA9D0D8</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSlider.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxSlider.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>CA7C74525C9216AA41465FBA</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxPanel.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxPanel.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>7FB97E569128C658CE3A793D</key>
+			<dict>
+				<key>fileRef</key>
+				<string>4AE6A6FDBDB20C699A119B32</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>4AE6A6FDBDB20C699A119B32</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxPanel.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxPanel.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>FD0E4611566F4D4889C977DA</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxLabel.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxLabel.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>B4C7B869FE07D4246A68EF29</key>
+			<dict>
+				<key>fileRef</key>
+				<string>70BEFE7BF7D7FFD335721F94</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>70BEFE7BF7D7FFD335721F94</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxLabel.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxLabel.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>A86F37F7B51572D7BEF299B6</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxGuiGroup.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxGuiGroup.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>44F7267048798A6D425BC9C2</key>
+			<dict>
+				<key>fileRef</key>
+				<string>DEDAC68DCDD8D252AF512843</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>DEDAC68DCDD8D252AF512843</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxGuiGroup.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxGuiGroup.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>80FC9CC48ADB646A30D1679F</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxGui.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxGui.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>66DAD44BE6DE9359056649E2</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxButton.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxButton.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>FDDAE3420747F8C98E272A3C</key>
+			<dict>
+				<key>fileRef</key>
+				<string>D1051DAF9567AED61A15F31C</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>D1051DAF9567AED61A15F31C</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxButton.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxButton.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>AB753B23F342A80946431F90</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxBaseGui.h</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxBaseGui.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>A763ED608B35AE3310251DEE</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>82AA3F24A953471E27D37D3D</string>
+					<string>AB753B23F342A80946431F90</string>
+					<string>D1051DAF9567AED61A15F31C</string>
+					<string>66DAD44BE6DE9359056649E2</string>
+					<string>80FC9CC48ADB646A30D1679F</string>
+					<string>DEDAC68DCDD8D252AF512843</string>
+					<string>A86F37F7B51572D7BEF299B6</string>
+					<string>70BEFE7BF7D7FFD335721F94</string>
+					<string>FD0E4611566F4D4889C977DA</string>
+					<string>4AE6A6FDBDB20C699A119B32</string>
+					<string>CA7C74525C9216AA41465FBA</string>
+					<string>2D999C909598014FDCA9D0D8</string>
+					<string>F9FBB14BB236B5CBE40D4AA7</string>
+					<string>9784659C28DFD8ABA17676D0</string>
+					<string>57DAF4C7884BC6CE19E50560</string>
+					<string>1B045BBA84B41B4E278C0DDB</string>
+					<string>3AA14969D9AE5F20768A8EB0</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>480A780D8D0308AE4A368801</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>A763ED608B35AE3310251DEE</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxGui</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>265C584D00CF743F5DCDFA09</key>
+			<dict>
+				<key>fileRef</key>
+				<string>82AA3F24A953471E27D37D3D</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>82AA3F24A953471E27D37D3D</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxBaseGui.cpp</string>
+				<key>path</key>
+				<string>../../../../src/openFrameworks/addons/ofxGui/src/ofxBaseGui.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>CFF9D1B22DDC638E96AE5DD5</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -695,6 +1048,7 @@ fi
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
 						<string>../../../../src/openFrameworks/addons/ofxGLFWJoystick/src</string>
+						<string>../../../../src/openFrameworks/addons/ofxGui/src</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/pgmidi</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/rtmidi</string>
@@ -762,6 +1116,7 @@ fi
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
 						<string>../../../../src/openFrameworks/addons/ofxGLFWJoystick/src</string>
+						<string>../../../../src/openFrameworks/addons/ofxGui/src</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/pgmidi</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/rtmidi</string>
@@ -808,6 +1163,7 @@ fi
 				<key>children</key>
 				<array>
 					<string>4FE8FB6236C47D936AA2A162</string>
+					<string>480A780D8D0308AE4A368801</string>
 					<string>2413C01760B1811BED0F502D</string>
 				</array>
 				<key>isa</key>
@@ -965,6 +1321,7 @@ fi
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
 						<string>../../../../src/openFrameworks/addons/ofxGLFWJoystick/src</string>
+						<string>../../../../src/openFrameworks/addons/ofxGui/src</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/pgmidi</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/rtmidi</string>
@@ -1030,6 +1387,7 @@ fi
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
 						<string>../../../../src/openFrameworks/addons/ofxGLFWJoystick/src</string>
+						<string>../../../../src/openFrameworks/addons/ofxGui/src</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/pgmidi</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/rtmidi</string>
@@ -1093,6 +1451,14 @@ fi
 					<string>E4B69E200A3A1BDC003C02F2</string>
 					<string>E4B69E210A3A1BDC003C02F2</string>
 					<string>01AF1AD2B06749DDCBD9FB1C</string>
+					<string>265C584D00CF743F5DCDFA09</string>
+					<string>FDDAE3420747F8C98E272A3C</string>
+					<string>44F7267048798A6D425BC9C2</string>
+					<string>B4C7B869FE07D4246A68EF29</string>
+					<string>7FB97E569128C658CE3A793D</string>
+					<string>D015DB6AFC6059CE501471A7</string>
+					<string>297CFAED26A27D2AA7F58058</string>
+					<string>F5B3414F36BC1766201AA5E6</string>
 					<string>7DFF8402FFA38B5D4888E929</string>
 					<string>0FB91E52145278A9B277BAB5</string>
 					<string>F2350174323443B3C4E8099E</string>
@@ -1189,6 +1555,7 @@ fi
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
 						<string>../../../../src/openFrameworks/addons/ofxGLFWJoystick/src</string>
+						<string>../../../../src/openFrameworks/addons/ofxGui/src</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/pgmidi</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/rtmidi</string>
@@ -1239,6 +1606,7 @@ fi
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
 						<string>../../../../src/openFrameworks/addons/ofxGLFWJoystick/src</string>
+						<string>../../../../src/openFrameworks/addons/ofxGui/src</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/pgmidi</string>
 						<string>../../../../src/openFrameworks/addons/ofxMidi/libs/rtmidi</string>
