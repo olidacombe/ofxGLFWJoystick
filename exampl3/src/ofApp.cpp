@@ -1,5 +1,4 @@
 #include "ofApp.h"
-#include "ofxGLFWJoystick.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -15,18 +14,21 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 
-	ofxGLFWJoystick::one().update();
-    
-    auto changes = ofxGLFWJoystick::one().getChangedValues(0);
-    
-    /*
-    for(auto& kv : changes.buttons) {
-        ofLogNotice("exampl3") << "button " << kv.first << " = " << static_cast<int>(kv.second);
+    if(true) { // check if it's time yet
+      ofxGLFWJoystick::one().update();
+      auto changes = ofxGLFWJoystick::one().getChangedValues(0);
+
+      sendMessages(changes);
     }
-    for(auto& kv : changes.axes) {
-        ofLogNotice("exampl3") << "axis " << kv.first << " = " << kv.second;
-    }
-    */
+
+}
+
+void ofApp::sendMessages(ofxGLFWJoystick::diff& changes, bool debug) {
+  if(debug) {
+    for(auto& kv : changes.buttons) ofLogNotice("ps2Midi") << "button " << kv.first << " - " << static_cast<int>(kv.second);
+    for(auto& kv : changes.axes) ofLogNotice("ps2Midi") << "axis " << kv.first << " - " << kv.second;
+  }
+
 }
 
 //--------------------------------------------------------------
