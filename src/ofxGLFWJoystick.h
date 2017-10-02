@@ -42,8 +42,8 @@ public:
 	void drawDebug(int x, int y);
 
         struct diff {
-          std::map<int, unsigned char> buttons;
-          std::map<int, float> axes;
+          std::unordered_map<int, unsigned char> buttons;
+          std::unordered_map<int, float> axes;
         };
 
         const diff getChangedValues(int joyID);
@@ -140,8 +140,8 @@ private:
 	JoyData joyData[GLFW_JOYSTICK_LAST];
         JoyData prevJoyData[GLFW_JOYSTICK_LAST];
 
-    std::map<int, unsigned char> buttonValueQueue;
-    std::map<int, float> axisValueQueue;
+    std::unordered_map<int, unsigned char> buttonValueQueue;
+    std::unordered_map<int, float> axisValueQueue;
 };
 
 #endif /* defined(__emptyExample__ofxGLFWJoystick__) */
