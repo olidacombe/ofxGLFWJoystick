@@ -10,3 +10,5 @@
 !**/*.xcodeproj/xcshareddata
 
 *.swp
+
+.DS_Store

@@ -6,6 +6,10 @@ void ofApp::setup(){
 	ofBackground(22);
 	ofxGLFWJoystick::one().printJoystickList();
 
+        if(!midiOut.openVirtualPort("ps2Midi")) {
+          ofLogError("ps2Midi") << "Unable to open virtual Midi port";
+        }
+
 }
 
 //--------------------------------------------------------------
