@@ -21,6 +21,8 @@ private:
   ofxMidiOut midiOut;
   const int midiChannel = 8;
 
+  int numButtons = 0;
+
   ofxPanel gui;
   ofParameter<bool> showGui;
   ofParameter<bool> debug;

@@ -12,7 +12,7 @@ void ofApp::setup(){
         gui.setup("params");
         gui.add(showGui.set("showGui", false));
         gui.add(debug.set("debug", false));
-        gui.add(midiCallbackTimeMillis.set("midiTime", 100, 20, 500));
+        gui.add(midiCallbackTimeMillis.set("midiTime", 30, 3, 500));
         gui.loadFromFile("settings.xml");
 
 }
@@ -23,10 +23,13 @@ void ofApp::update(){
     int time = ofGetElapsedTimeMillis();
 
     if(time > midiCallbackTimeMillis) { // check if it's time yet
+
       ofxGLFWJoystick::one().update();
+      numButtons = ofxGLFWJoystick::one().getNumButtons(0);
+
       auto changes = ofxGLFWJoystick::one().getChangedValues(0);
 
-      sendMessages(changes);
+      sendMessages(changes, debug);
       ofResetElapsedTimeCounter();
     }
 
@@ -45,7 +48,7 @@ void ofApp::sendMessages(ofxGLFWJoystick::diff& changes, bool debug) {
   }
 
   for(auto& kv : changes.axes) {
-    midiOut.sendControlChange(midiChannel, baseCC + kv.first, ofMap(kv.second, 0., 1., 0, 127, true));
+    midiOut.sendControlChange(midiChannel, baseCC + numButtons + kv.first, ofMap(kv.second, -1., 1., 0, 127, true));
   }
 
 }
@@ -68,6 +71,8 @@ void ofApp::draw(){
 
 	ofSetColor(255);
 	ofCircle(mappedX, mappedY, 3);
+
+        if(showGui) gui.draw();
 
 }
 
