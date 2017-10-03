@@ -44,7 +44,7 @@ void ofApp::sendMessages(ofxGLFWJoystick::diff& changes, bool debug) {
   }
 
   for(auto& kv : changes.buttons) {
-    midiOut.sendControlChange(midiChannel, baseCC + kv.first, kv.second);
+    midiOut.sendControlChange(midiChannel, baseCC + kv.first, kv.second > 0 ? 127:0);
   }
 
   for(auto& kv : changes.axes) {
@@ -56,7 +56,9 @@ void ofApp::sendMessages(ofxGLFWJoystick::diff& changes, bool debug) {
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-	ofxGLFWJoystick::one().drawDebug(100,100);
+    if(debug) {
+        ofxGLFWJoystick::one().drawDebug(100,100);
+    }
 
 	//safe access o joystick - slower
 	int joystickID = 0;
@@ -72,7 +74,7 @@ void ofApp::draw(){
 	ofSetColor(255);
 	ofCircle(mappedX, mappedY, 3);
 
-        if(showGui) gui.draw();
+    if(showGui) gui.draw();
 
 }
 

@@ -76,59 +76,42 @@ public:
 			available = false;
 		}
 
-                void clear() {
-                  axisData = NULL;
-                  buttonData = NULL;
-                  numAxis = 0;
-                  numButtons = 0;
-                  prevAxisData.clear();
-                  prevButtonData.clear();
-                }
-                
-                void shift() {
-                  prevButtonData.assign(buttonData, buttonData + numButtons);
-                  prevAxisData.assign(axisData, axisData + numAxis);
-                }
+        void clear() {
+          axisData = NULL;
+          buttonData = NULL;
+          numAxis = 0;
+          numButtons = 0;
+          prevAxisData.clear();
+          prevButtonData.clear();
+        }
+        
+        void shift() {
+          prevButtonData.assign(buttonData, buttonData + numButtons);
+          prevAxisData.assign(axisData, axisData + numAxis);
+        }
 
-                diff changes() {
-                  diff changes;
-                  const int cmpAxes = min(static_cast<size_t>(numAxis), prevAxisData.size());
-                  const int cmpButtons = min(static_cast<size_t>(numButtons), prevAxisData.size());
-                  for(int i=0; i<cmpAxes; i++) {
-                    if(axisData[i] != prevAxisData[i]) {
+        diff changes() {
+            diff changes;
+
+            for(int i=0; i<prevAxisData.size(); i++) {
+                if(axisData[i] != prevAxisData[i]) {
                       changes.axes[i] = axisData[i];
-                    }
-                  }
-                  for(int i=0; i<cmpButtons; i++) {
-                    if(buttonData[i] != prevButtonData[i]) {
-                      changes.buttons[i] = buttonData[i];
-                    }
-                  }
-                  return changes;
                 }
-
-                /*
-                diff operator%(const JoyData& other) {
-                  diff changes;
-                  const int cmpAxes = min(numAxis, other.numAxis);
-                  const int cmpButtons = min(numButtons, other.numButtons);
-
-                  // this makes me uncomfortable
-                  for(int i=0; i<cmpAxes; i++) {
-                    if(axisData[i] != other.axisData[i]) {
-                      changes.axes[i] = axisData[i];
-                    }
-                  }
-                  for(int i=0; i<cmpButtons; i++) {
-                    if(buttonData[i] != other.buttonData[i]) {
-                      changes.buttons[i] = buttonData[i];
-                    }
-                  }
-
-                  ofLogNotice() << this->buttonData[0];
-                  return changes;
+            }
+            for(int i=prevAxisData.size(); i<numAxis; i++) {
+                changes.axes[i] = axisData[i];
+            }
+            for(int i=0; i<prevButtonData.size(); i++) {
+                if(buttonData[i] != prevButtonData[i]) {
+                    changes.buttons[i] = buttonData[i];
                 }
-                */
+            }
+            for(int i=prevButtonData.size(); i<numButtons; i++) {
+                changes.buttons[i] = buttonData[i];
+            }
+            return changes;
+        }
+
 	};
 
 private:
