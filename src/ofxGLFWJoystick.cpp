@@ -48,22 +48,25 @@ void ofxGLFWJoystick::lookForJoysticks(){
 
 	int n = 0;
 	for(int i = 0; i < GLFW_JOYSTICK_LAST; i++){
+        JoyData& jd = joyData[i];
 		if(glfwJoystickPresent(i)){
-			joyData[i].available = true;
+			jd.available = true;
+            jd.ID = i;
 			string name = string(glfwGetJoystickName(i));
-			if(name != joyData[i].name){
-				joyData[i].name = name;
+			if(name != jd.name){
+				jd.name = name;
 				ofLogNotice("ofxGLFWJoystick") << "Joystick Found at index " << i << ": '" << name << "'";
-				joyData[i].axisData = glfwGetJoystickAxes(i, &joyData[i].numAxis);
-				joyData[i].buttonData = glfwGetJoystickButtons(i, &joyData[i].numButtons);
+                jd.update();
+				//jd.axisData = glfwGetJoystickAxes(i, &jd.numAxis);
+				//jd.buttonData = glfwGetJoystickButtons(i, &jd.numButtons);
 			}
 			n++;
 		}else{
-			if (joyData[i].name.size()){
-				ofLogNotice("ofxGLFWJoystick") << "Joystick Lost at index " << i << ": '" << joyData[i].name << "'";
+			if (jd.name.size()){
+				ofLogNotice("ofxGLFWJoystick") << "Joystick Lost at index " << i << ": '" << jd.name << "'";
 			}
-			joyData[i].available = false;
-			joyData[i].name = "";
+			jd.available = false;
+			jd.name = "";
 		}
 	}
 	numJoysticks = n;
@@ -76,18 +79,24 @@ void ofxGLFWJoystick::update(){
 		lookForJoysticks();
 	}
 
-	vector<string> joys;
+	//vector<string> joys;
 
-        std::swap(joyData, prevJoyData);
+//        std::swap(joyData, prevJoyData);
 
 	for(int j = 0; j < numJoysticks; j++) {
-		joyData[j].available = glfwJoystickPresent(j);
-		if(!joyData[j].available){
-                    joyData[j].clear();
+        JoyData& jd = joyData[j];
+		if(!jd.available){
+            jd.clear();
 		} else {
+            // joyData should have own identity and own update funciton really
+            /*
             joyData[j].shift();
-			joyData[j].axisData = glfwGetJoystickAxes(j, &joyData[j].numAxis);
 			joyData[j].buttonData = glfwGetJoystickButtons(j, &joyData[j].numButtons);
+			joyData[j].axisData = glfwGetJoystickAxes(j, &joyData[j].numAxis);
+            joyData[j].updateAggregates();
+            */
+            jd.shift();
+            jd.update();
 		}
 	}
 }

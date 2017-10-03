@@ -19,7 +19,7 @@ public:
 
 private:
   ofxMidiOut midiOut;
-  const int midiChannel = 8;
+    const int midiChannel = 8;
 
   int numButtons = 0;
 

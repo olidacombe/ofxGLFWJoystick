@@ -62,6 +62,7 @@ public:
 
 	struct JoyData{
 		bool available;
+        int ID;
 		string name;
 		int numButtons;
 		const unsigned char * buttonData;
@@ -75,6 +76,13 @@ public:
 			numButtons = numAxis = 0;
 			available = false;
 		}
+        
+        void update() {
+            //shift(); // does this break first time when ...data * is NULL?
+            axisData = glfwGetJoystickAxes(ID, &numAxis); // ref?
+            buttonData = glfwGetJoystickButtons(ID, &numButtons);
+            // updateAggregates(); // todo
+        }
 
         void clear() {
           axisData = NULL;
@@ -121,7 +129,7 @@ private:
 
 	int numJoysticks;
 	JoyData joyData[GLFW_JOYSTICK_LAST];
-        JoyData prevJoyData[GLFW_JOYSTICK_LAST];
+//JoyData prevJoyData[GLFW_JOYSTICK_LAST];
 
     std::unordered_map<int, unsigned char> buttonValueQueue;
     std::unordered_map<int, float> axisValueQueue;
