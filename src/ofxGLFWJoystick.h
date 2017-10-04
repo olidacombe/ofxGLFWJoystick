@@ -78,7 +78,7 @@ public:
 		}
         
         void update() {
-            //shift(); // does this break first time when ...data * is NULL?
+            shift(); // does this break first time when ...data * is NULL?
             axisData = glfwGetJoystickAxes(ID, &numAxis); // ref?
             buttonData = glfwGetJoystickButtons(ID, &numButtons);
             // updateAggregates(); // todo

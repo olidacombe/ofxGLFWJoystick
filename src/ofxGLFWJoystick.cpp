@@ -79,23 +79,12 @@ void ofxGLFWJoystick::update(){
 		lookForJoysticks();
 	}
 
-	//vector<string> joys;
-
-//        std::swap(joyData, prevJoyData);
-
 	for(int j = 0; j < numJoysticks; j++) {
         JoyData& jd = joyData[j];
 		if(!jd.available){
             jd.clear();
 		} else {
-            // joyData should have own identity and own update funciton really
-            /*
-            joyData[j].shift();
-			joyData[j].buttonData = glfwGetJoystickButtons(j, &joyData[j].numButtons);
-			joyData[j].axisData = glfwGetJoystickAxes(j, &joyData[j].numAxis);
-            joyData[j].updateAggregates();
-            */
-            jd.shift();
+            //jd.shift();
             jd.update();
 		}
 	}

@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetFrameRate(60);
 	ofBackground(22);
 	ofxGLFWJoystick::one().printJoystickList();
 
