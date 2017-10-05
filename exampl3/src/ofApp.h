@@ -4,6 +4,7 @@
 #include "ofxMidi.h"
 #include "ofxGLFWJoystick.h"
 #include "ofxGui.h"
+#include "axisSmoother.h"
 
 class ofApp : public ofBaseApp{
 public:
@@ -27,6 +28,7 @@ private:
   ofParameter<bool> showGui;
   ofParameter<bool> debug;
   ofParameter<int> midiCallbackTimeMillis;
+  ofParameter<float> axisSmooth;
 
 
 };

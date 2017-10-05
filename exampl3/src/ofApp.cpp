@@ -13,6 +13,7 @@ void ofApp::setup(){
         gui.setup("params");
         gui.add(showGui.set("showGui", false));
         gui.add(debug.set("debug", false));
+        gui.add(axisSmooth.set("axisSmooth", 0.5, 0.0, 1.0));
         gui.add(midiCallbackTimeMillis.set("midiTime", 30, 3, 500));
         gui.loadFromFile("settings.xml");
 
