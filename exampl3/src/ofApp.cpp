@@ -26,13 +26,15 @@ void ofApp::update(){
 
     if(time > midiCallbackTimeMillis) { // check if it's time yet
 
-      ofxGLFWJoystick::one().update();
-      numButtons = ofxGLFWJoystick::one().getNumButtons(0);
+        ofxGLFWJoystick::one().update();
+        numButtons = ofxGLFWJoystick::one().getNumButtons(0);
+        //numAxes = ofxGLFWJoystick::one().getNumAxis(0);
 
-      auto changes = ofxGLFWJoystick::one().getChangedValues(0);
+        auto changes = ofxGLFWJoystick::one().getChangedValues(0);
 
-      sendMessages(changes, debug);
-      ofResetElapsedTimeCounter();
+
+        sendMessages(changes, debug);
+        ofResetElapsedTimeCounter();
     }
 
 }

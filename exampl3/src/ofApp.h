@@ -4,7 +4,7 @@
 #include "ofxMidi.h"
 #include "ofxGLFWJoystick.h"
 #include "ofxGui.h"
-#include "axisSmoother.h"
+#include "AxisSmoother.h"
 
 class ofApp : public ofBaseApp{
 public:
@@ -23,12 +23,13 @@ private:
     const int midiChannel = 8;
 
   int numButtons = 0;
+//    int numAxes = 0;
 
   ofxPanel gui;
   ofParameter<bool> showGui;
   ofParameter<bool> debug;
   ofParameter<int> midiCallbackTimeMillis;
   ofParameter<float> axisSmooth;
-
+    
 
 };

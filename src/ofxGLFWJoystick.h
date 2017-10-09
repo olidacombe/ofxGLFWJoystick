@@ -61,6 +61,20 @@ public:
 //private:
 
 	struct JoyData{
+
+        typedef std::map<int, float> axisMapType;
+        typedef std::map<int, unsigned char> buttonMapType;
+        
+
+        template <class T>
+        class Processor {
+        public:
+            Processor() {}
+            virtual ~Processor() {}
+            
+            virtual void process(T& data) { return data; } // process values in-place
+        };
+
 		bool available;
         int ID;
 		string name;
@@ -85,17 +99,17 @@ public:
         }
 
         void clear() {
-          axisData = NULL;
-          buttonData = NULL;
-          numAxis = 0;
-          numButtons = 0;
-          prevAxisData.clear();
-          prevButtonData.clear();
+            axisData = NULL;
+            buttonData = NULL;
+            numAxis = 0;
+            numButtons = 0;
+            prevAxisData.clear();
+            prevButtonData.clear();
         }
         
         void shift() {
-          prevButtonData.assign(buttonData, buttonData + numButtons);
-          prevAxisData.assign(axisData, axisData + numAxis);
+            prevButtonData.assign(buttonData, buttonData + numButtons);
+            prevAxisData.assign(axisData, axisData + numAxis);
         }
 
         diff changes() {
@@ -121,7 +135,7 @@ public:
         }
 
 	};
-
+    
 private:
 
 	ofxGLFWJoystick();
